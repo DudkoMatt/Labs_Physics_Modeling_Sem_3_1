@@ -38,28 +38,7 @@
             maximum_coordinate_x = canvas.width - SPACER_DRAWING;
             maximum_coordinate_y = SPACER_DRAWING;
 
-            // ToDO: debug
-
-            ctx.save();
-
-            ctx.strokeStyle = "rgba(255, 0, 0, 0.5)";
-            ctx.fillStyle = "rgba(255, 0, 0, 0.2)";
-            ctx.rect(start_coordinate_x, stop_coordinate_y,
-                stop_coordinate_x - start_coordinate_x,
-                start_coordinate_y - stop_coordinate_y);
-
-            ctx.stroke();
-            ctx.fill();
-
-            ctx.closePath();
-            ctx.clearRect(minimum_coordinate_x, maximum_coordinate_y,
-                maximum_coordinate_x - minimum_coordinate_x,
-                minimum_coordinate_y - maximum_coordinate_y);
-
-            ctx.restore();
-
-            draw_axis();
-            draw_serif();
+            draw();
         }
 
         function map_point(x, y) {
@@ -251,7 +230,7 @@
             </label>
         </td>
         <td>
-            <input type="number" id="input_a" min="0.01" value="1" step="0.01" onchange="draw()" onkeyup="draw()">
+            <input type="number" id="input_a" min="0.01" value="3.42" step="0.01" onchange="draw()" onkeyup="draw()">
         </td>
     </tr>
     <tr>
@@ -261,7 +240,7 @@
             </label>
         </td>
         <td>
-            <input type="number" id="input_b" min="0.01" value="1" step="0.01" onchange="draw()" onkeyup="draw()">
+            <input type="number" id="input_b" min="0.01" value="10" step="0.01" onchange="draw()" onkeyup="draw()">
         </td>
     </tr>
     <tr>
