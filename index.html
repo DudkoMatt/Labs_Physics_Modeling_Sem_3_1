@@ -1,10 +1,76 @@
+<!-- 3.	Фигуры Лиссажу -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
+    <title>Моделирование №3</title>
     <meta charset="UTF-8">
-    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" href="Styles.css">
+    <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+
 </head>
-<body>
+<body onload="init()">
+<h1>
+    Задача на моделирование №14. Фигуры Лиссажу
+</h1>
+<h2>
+    M3201. Дудко Матвей
+</h2>
+<canvas height='600' width='800' id='canvas_id'>Обновите браузер</canvas>
+<br>
+
+<h3>Формулы, по которым производятся расчеты:</h3>
+<div lang="latex">
+    \begin{cases}
+    x(t) = A sin(at + \delta) \\
+    y(t) = B sin(bt)
+    \end{cases}
+</div>
+<br>
+
+<table style="margin-top: 5px">
+    <tr>
+        <td>
+            <b>Параметры уравнений:</b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="input_a" id="input_a_label">
+                Коэффициент A: [0 .. any]
+            </label>
+        </td>
+        <td>
+            <input type="number" id="input_a" min="0" value="1">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="input_b" id="input_b_label">
+                Коэффициент B: [0 .. any]
+            </label>
+        </td>
+        <td>
+            <input type="number" id="input_b" min="0" value="1" onkeyup="update_input_text_fields()">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="input_delta" id="input_delta_label">
+                Разность фаз δ: [any]
+            </label>
+        </td>
+        <td>
+            <input type="number" id="input_delta" value="0" onkeyup="update_input_text_fields()">
+        </td>
+        <td>
+            <input type="checkbox" id="pi_checkbox">
+            <label for="pi_checkbox">
+                * &#960;
+            </label>
+        </td>
+    </tr>
+</table>
 
 </body>
 </html>
